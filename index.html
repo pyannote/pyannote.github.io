@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/grid.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <link href="//abs.twimg.com/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="assets/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -38,8 +43,7 @@
 
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        // "bootstrap": "An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites",
-        // "naggati2": "A protocol builder for Netty using Scala 2.8"
+        "pyannote.github.io": "Source code of this very page",
       };
 
       function repoDescription(repo) {
@@ -158,100 +162,17 @@
       }
       getNumMembers();
 
-      function randomItem(array) {
-        return array[Math.floor(Math.random() * array.length)];
-      }
-
-      var $flyzone;
-
-      function flyzone() {
-        if (!$flyzone) {
-          $flyzone = $("<div>").attr("id", "flyzone").prependTo(document.body);
-        }
-
-        return $flyzone;
-      }
-
-      var sizes = ["smaller", "small", "medium", "large", "fat"];
-
-      var sizeDimensions = {
-        "smaller": 50,
-        "small": 80,
-        "medium": 130,
-        "large": 200,
-        "fat": 300
-      };
-
-      function randomOpacity(threshold) {
-        var opacity = Math.random();
-
-        while (opacity < threshold) {
-          opacity = Math.random();
-        }
-
-        return opacity;
-      }
-
-      function makeLarry(sizeName, speed) {
-        var size = sizeDimensions[sizeName];
-        var top = Math.floor((flyzone().height() - size) * Math.random());
-
-        var $img = $("<img>")
-          .addClass("larry size-" + sizeName)
-          .attr("src", "assets/pyannote.png")
-          .attr("width", size)
-          .attr("height", size)
-          .css({
-            position: "absolute",
-            opacity: randomOpacity(0.4),
-            top: top,
-            left: -size
-          });
-
-        $img.prependTo(flyzone());
-
-        var left = flyzone().width() + size;
-
-        $img.animate({left: left}, speed, function () {
-          $img.remove();
-          makeRandomLarry();
-        });
-
-        return $img;
-      }
-
-      function makeRandomLarry() {
-        var size = randomItem(sizes);
-        var speed = Math.floor(Math.random() * 20000) + 15000;
-        return makeLarry(size, speed);
-      }
-
-      $(function () {
-        $("#logo").click(function () {
-          makeRandomLarry();
-        });
-      });
-
-      var match = (/\blarry(=(\d+))?\b/i).exec(window.location.search);
-
-      if (match) {
-        var n = parseInt(match[2]) || 20;
-
-        $(function () {
-          for (var i = 0; i < n; ++i) {
-            setTimeout(makeRandomLarry, Math.random() * n * 500);
-          }
-        });
-      }
     })(jQuery);
     </script>
   </head>
   <body>
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
-        <div id="logo"><h1>PyAnnote</h1></div>
-        <h1>Collaborative annotation of audio-visual documents.</h1>
-        <p>Want to help? <a href="https://github.com/pyannote">Contribute</a></p>
+        <div id="logo"><h1>pyannote</h1></div>
+        <h1>Collaborative annotation of audio-visual documents</h1>
+        <h3>$ pip install pyannote<h3>
+        <h3>documentation<h3>
+        <h3><a href="https://github.com/pyannote">development</a><h3>
       </div>
 
       <div class="grid grid-3">
