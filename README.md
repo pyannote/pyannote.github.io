@@ -1,7 +1,7 @@
-twitter.github.com
-======
+pyannote.github.io
+==================
 
-The source code of http://twitter.github.com/
+The source code of http://pyannote.github.io/
 
 LICENSE
 ------------
